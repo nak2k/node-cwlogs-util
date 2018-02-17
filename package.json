@@ -1,0 +1,36 @@
+{
+  "name": "cwlogs-util",
+  "version": "0.0.1",
+  "description": "Utility for CloudWatch Logs",
+  "author": "Kengo Nakatsuka <kengo.nakatsuka@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/nak2k/node-cwlogs-util/issues"
+  },
+  "dependencies": {
+    "run-parallel": "^1.1.7"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.197.0",
+    "tape": "^4.8.0"
+  },
+  "homepage": "https://github.com/nak2k/node-cwlogs-util",
+  "keywords": [
+    "aws",
+    "cloudwatch",
+    "logs"
+  ],
+  "license": "MIT",
+  "main": "lib",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nak2k/node-cwlogs-util.git"
+  },
+  "scripts": {
+    "prepare": "npm test",
+    "test": "tape test/test*.js"
+  },
+  "files": [
+    "README.md",
+    "lib/"
+  ]
+}
