@@ -1,9 +1,11 @@
 # cwlogs-util
 
+Utility for CloudWatch Logs.
+
 ## Installation
 
 ```
-npm i cwlogs-util -S
+npm i cwlogs-util
 ```
 
 ## License
