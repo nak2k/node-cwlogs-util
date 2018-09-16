@@ -5,8 +5,6 @@ const {
 } = require('..');
 const AWS = require('aws-sdk');
 
-AWS.config.update({ region: process.env.AWS_REGION || 'us-west-2' });
-
 test('test conditionalPutRetentionPolicy', t => {
   t.plan(2);
 
