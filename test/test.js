@@ -1,27 +1,27 @@
 const test = require('tape');
 const {
   conditionalPutRetentionPolicy,
-  removeEmptyLogGroups,
+  deleteEmptyLogGroups,
 } = require('..');
 const AWS = require('aws-sdk');
 
-test('test conditionalPutRetentionPolicy', t => {
-  t.plan(2);
+test('test conditionalPutRetentionPolicy', async t => {
+  t.plan(1);
 
-  conditionalPutRetentionPolicy({
-    retentionInDays: 7,
-  }, (err, result) => {
-    t.error(err);
-
-    t.ok(Array.isArray(result.logGroups));
+  const result = await conditionalPutRetentionPolicy({
+    logGroupNamePrefix: "cwlogs-util",
+    retentionInDays: 90,
   });
+
+  t.ok(Array.isArray(result.logGroups));
 });
 
-test('test removeEmptyLogGroups', t => {
-  t.plan(2);
-  removeEmptyLogGroups({}, (err, result) => {
-    t.error(err);
+test('test deleteEmptyLogGroups', async t => {
+  t.plan(1);
 
-    t.ok(Array.isArray(result.removedLogGroups));
+  const result = await deleteEmptyLogGroups({
+    logGroupNamePrefix: "cwlogs-util",
   });
+
+  t.ok(Array.isArray(result.deletedLogGroups));
 });

@@ -8,25 +8,31 @@ Utility for CloudWatch Logs.
 npm i cwlogs-util
 ```
 
-## conditionalPutRetentionPolicy(options, callback)
+## conditionalPutRetentionPolicy(options)
 
 Set a retention policy to log groups that have no policy.
 
 - `options.logGroupNamePrefix`
-  - A string that a name of target log groups has as a prefix.
+  - The prefix of target log groups.
 - `options.retentionInDays`
-  - A number of days to retain log events.
-- `callback(err, result)`
-  - A function that is called when setting to log groups is completed, or an error occurs.
+  - The number of days to retain log events.
 
-## removeEmptyLogGroups(options, callback)
+Return an object has following properties:
 
-Remove log groups that have no log events.
+- `logGroups`
+  - Log groups that the retention policy is set.
+
+## deleteEmptyLogGroups(options)
+
+Delete log groups that have no log events.
 
 - `options.logGroupNamePrefix`
-  - A string that a name of target log groups has as a prefix.
-- `callback(err, result)`
-  - A function that is called when removing is completed, or an error occurs.
+  - The prefix of target log groups.
+
+Return an object has following properties:
+
+- `deletedLogGroups`
+  - Deleted log groups.
 
 ## License
 
